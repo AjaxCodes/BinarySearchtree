@@ -11,5 +11,9 @@ namespace BianaryTreeProject
         public int value;
         public Node leftNode;
         public Node RightNode;
+
+
+
     }
+
 }
