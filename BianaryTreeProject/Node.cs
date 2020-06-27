@@ -9,8 +9,8 @@ namespace BianaryTreeProject
     public class Node
     {
         public int value;
-        public Node leftNode;
-        public Node RightNode;
+        public Node leftNode { get; set;}
+        public Node rightNode { get; set; }
 
 
 
