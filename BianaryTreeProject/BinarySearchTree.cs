@@ -42,12 +42,26 @@ namespace BianaryTreeProject
             //create new node
             //check if rootNode is null. If so, make initial node the root
         }
-        public Node Find(int value) 
+        public void search(int value, Node leftNode, Node rightNode, Node rootNode, Node Newnode)
         {
 
-            Console.ReadLine();
+            Console.WriteLine("which node are you looking for");
+            rootNode.value = int.Parse(Console.ReadLine());
+            for (int i = 0; i < value; i++)
+            {
+
+
+
+                GetNode(rightNode,leftNode,value);
+
+
+
+            }
+               
+
             
-            return this.Find(value);
+            
+           
             
         }
        
