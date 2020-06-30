@@ -10,16 +10,16 @@ namespace BianaryTreeProject
     {
         static void Main()
         {
-           // BinarySearchTree binaryTree = new binaryTree();
-            
-            
-           // BinarySearchTree.Add(3);
-           // BinarySearchTree.Add(7);
-           // BinarySearchTree.Add(8);
-           // BinarySearchTree.Add(10);
-           // BinarySearchTree.Add(13);
-           // BinarySearchTree.Add(15);
-           // BinarySearchTree.Add(18);
+            BinarySearchTree binaryTree = new BinarySearchTree();
+
+
+            binaryTree.Add(3);
+            binaryTree.Add(7);
+            binaryTree.Add(8);
+            binaryTree.Add(5);
+            binaryTree.Add(6);
+            binaryTree.Add(2);
+            binaryTree.Add(9);
         }
     }
 }

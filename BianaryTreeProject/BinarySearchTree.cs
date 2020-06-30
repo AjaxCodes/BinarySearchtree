@@ -12,10 +12,10 @@ namespace BianaryTreeProject
     {
 
         public Node rootNode;
-        public int value;
+        //public int value;
 
 
-        public void Add(Node leftNode, Node rightNode, Node newNode)
+        public void Add(int value) //100 -- 110 -- 115
         {
             Node node = new Node();
             node.value = value;
@@ -27,22 +27,46 @@ namespace BianaryTreeProject
             }
             else
             {
-                if (rootNode != null && node.value >= rootNode.value)
+                Node temporaryNode = rootNode;
+                while (true)
                 {
-                    node = leftNode;
+                    if (rootNode != null && node.value >= temporaryNode.value)
+                    {
+                        if (temporaryNode.rightNode == null)
+                        {
+                            temporaryNode.rightNode = node;
+                            break;
+                        }
+                        else
+                        {
+
+                            temporaryNode = temporaryNode.rightNode;
+                        }
+                    }
+                    else if (temporaryNode.rightNode != null && rootNode.value <= temporaryNode.value)
+                    {
+                        if (temporaryNode.leftNode == null)
+                        {
+                            temporaryNode.leftNode = node;
+                            break;
+                        }
+                        else 
+                        {
+                            temporaryNode = temporaryNode.leftNode;
+
+                        }
+                        
+                    }
+                  
                 }
-                else if (rootNode != null && node.value <= rootNode.value)
-                {
-                    node = rightNode;
-                }
+
 
             }
 
 
-            //create new node
-            //check if rootNode is null. If so, make initial node the root
+            
         }
-        public void Search(int value, Node rootNode,Node rightNode,Node leftNode)
+        public void Search(int value, Node rootNode, Node rightNode, Node leftNode)
         {
             if (rootNode != null)
             {
@@ -56,32 +80,15 @@ namespace BianaryTreeProject
                     return leftNode(value, rootNode.leftNode);
 
                 }
-                else          
+                else
                 {
 
                     return rightNode(value, rootNode.rightNode);
 
                 }
-                
-                
 
+            }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }   
-    
-    
-    
+        }
+    }
 }
