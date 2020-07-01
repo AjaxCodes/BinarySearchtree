@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Security.AccessControl;
 using System.Security.Cryptography.X509Certificates;
@@ -12,7 +13,7 @@ namespace BianaryTreeProject
     {
 
         public Node rootNode;
-        //public int value;
+        public int value;
 
 
         public void Add(int value) //100 -- 110 -- 115
@@ -50,45 +51,71 @@ namespace BianaryTreeProject
                             temporaryNode.leftNode = node;
                             break;
                         }
-                        else 
+                        else
                         {
                             temporaryNode = temporaryNode.leftNode;
 
                         }
-                        
+
                     }
-                  
+
                 }
 
 
             }
+
+
+
+        }
+        public void Search(int value)
+        {
+            Node node = new Node();
+            node.value = value;
+            Node currentNode = rootNode;
+
+            while (true)
+            {
+                if (currentNode.rightNode.value == value)
+                {
+                    currentNode.rightNode = node;
+                }
+                else if (currentNode.leftNode.value == value)
+                {
+                    currentNode.leftNode = node;
+                }
+            }
+            
+
+
+
+             
+
+
+
+
+
+
 
 
             
         }
-        public void Search(int value, Node rootNode, Node rightNode, Node leftNode)
-        {
-            if (rootNode != null)
-            {
-                if (value == rootNode)
-                {
-                    return rootNode.value;
-
-                }
-                if (value < rootNode.value)
-                {
-                    return leftNode(value, rootNode.leftNode);
-
-                }
-                else
-                {
-
-                    return rightNode(value, rootNode.rightNode);
-
-                }
-
-            }
-
-        }
     }
 }
+
+
+
+
+            
+
+                
+
+             
+                   
+                     
+
+                
+                
+
+            
+
+       
